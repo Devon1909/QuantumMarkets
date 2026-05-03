@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-space: #0A0E14;
+  --color-cyan: #00F2FF;
+  --color-cyan-dim: rgba(0, 242, 255, 0.2);
+}
+
+body {
+  background-color: var(--color-space);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -20vh;
+  left: 0;
+  width: 100vw;
+  height: 120vh;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.glass-panel {
+  background: rgba(10, 14, 20, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+.cyan-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00F2FF 0%, #0088FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
